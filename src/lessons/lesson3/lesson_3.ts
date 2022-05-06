@@ -1,9 +1,3 @@
-console.log('lesson 3');
-const prom = new Promise((resolve,reject)=>{
-resolve(alert);
-})
-
-console.log(prom)
 // Event loop
 // https://learn.javascript.ru/event-loop
 // https://habr.com/ru/company/ruvds/blog/340508/
@@ -21,4 +15,80 @@ console.log(prom)
 
 
 // just a plug
-export default ()=>{};
+
+export default () => {
+};
+
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout((response) => {
+//         const {httpStatus, data} = response
+//         if (httpStatus >= 200 && httpStatus < 300) {
+//             resolve(data)
+//         }
+//
+//     }, 3000, {httpStatus: 200, data: {name: 'Anatoli', age: 32, city: 'Gdansk', id: '1'}})
+// })
+//
+// promise
+//     .then((data) => {
+//         console.log(data)
+// return 10
+//     })
+//     .then((data2) => {
+//         console.log(data2)
+//     })
+//====================================================
+
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout((response) => {
+//         const {httpStatus, data} = response
+//         if (httpStatus >= 200 && httpStatus < 300) {
+//             resolve(data)
+//         }
+//
+//     }, 3000, {httpStatus: 200, data: {name: 'Anatoli', age: 32, city: 'Gdansk', id: '1'}})
+// })
+//
+// promise
+//     .then((res) => {
+//         console.log(res)
+//         return new Promise((resolve, reject) => {
+//             setTimeout((response) => {
+//                 const {httpStatus, data} = response
+//                 if (httpStatus >= 200 && httpStatus < 300) {
+//                     resolve(data)
+//                 }
+//
+//             }, 5000, {httpStatus: 200, data: {name: 'Andian', age: 32, city: 'Gdansk', id: '1'}})
+//         })
+//     })
+//     .then((data2) => {
+//         console.log(data2)
+//     })
+
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout((response) => {
+        const {httpStatus, data, error} = response
+        if (httpStatus >= 200 && httpStatus < 400) {
+            resolve(data)
+        } else {
+            reject(error)
+        }
+
+    }, 1000, {
+        httpStatus: 404,
+        data: {name: 'Anatoli', age: 32, city: 'Gdansk', id: '1'},
+        error: {message: 'Not found'}
+    })
+})
+promise
+    .then((data)=>{
+    console.log(data)
+})
+    .catch((error)=>{
+    console.log(error)
+    return 10
+})
+    .then(r=>console.log(r))
+
