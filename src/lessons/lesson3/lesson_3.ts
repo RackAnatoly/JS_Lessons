@@ -66,29 +66,56 @@ export default () => {
 //         console.log(data2)
 //     })
 
+//
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout((response) => {
+//         const {httpStatus, data, error} = response
+//         if (httpStatus >= 200 && httpStatus < 400) {
+//             resolve(data)
+//         } else {
+//             reject(error)
+//         }
+//
+//     }, 1000, {
+//         httpStatus: 404,
+//         data: {name: 'Anatoli', age: 32, city: 'Gdansk', id: '1'},
+//         error: {message: 'Not found'}
+//     })
+// })
+// promise
+//     .then((data)=>{
+//     console.log(data)
+// })
+//     .catch((error)=>{
+//     console.log(error)
+//     return 10
+// })
+//     .then(r=>console.log(r))
+//========================================================
 
-const promise = new Promise((resolve, reject) => {
-    setTimeout((response) => {
-        const {httpStatus, data, error} = response
-        if (httpStatus >= 200 && httpStatus < 400) {
-            resolve(data)
-        } else {
-            reject(error)
-        }
+// async function f() {
+//     const result = await new Promise((res, rej) => {
+//         setTimeout(() => {
+//             res('Yo')
+//         }, 2000)
+//     })
+//     console.log(result)
+// }
+//
+// f()
 
-    }, 1000, {
-        httpStatus: 404,
-        data: {name: 'Anatoli', age: 32, city: 'Gdansk', id: '1'},
-        error: {message: 'Not found'}
-    })
-})
-promise
-    .then((data)=>{
-    console.log(data)
-})
-    .catch((error)=>{
-    console.log(error)
-    return 10
-})
-    .then(r=>console.log(r))
 
+async function f() {
+    try {
+        const result = await new Promise((res, rej) => {
+            setTimeout(() => {
+                rej('Yo')
+            }, 2000)
+        })
+        console.log(result);
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+f()
