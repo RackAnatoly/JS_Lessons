@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import API from './API';
 import './lesson_3';
+import '../lesson7/lesson7'
 
 const Lesson3 = () => {
     const [searchName, setSearchName] = useState('');

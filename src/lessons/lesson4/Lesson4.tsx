@@ -1,5 +1,7 @@
 import React from 'react'
-import './lesson_4';
+// import './lesson_4';
+//import '../lesson7/lesson7'
+import '../lesson8/lesson_8'
 import {createPromise, rejectPromise, resolvePromise} from "./lesson_4";
 
 const Lesson4 = () => {

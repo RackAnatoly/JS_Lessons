@@ -1,3 +1,4 @@
+console.log('lesson 8')
 // Task 1
 // Есть некоторая строка (const str = 'fgfggg';), что будет, если мы возьмем str[0]
 
@@ -44,7 +45,7 @@ const tree = {
 // Task 5
 // исправить код, что бы работал правильно
 
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
 	setTimeout(function () {
 		console.log(i);
 	}, 100);

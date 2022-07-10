@@ -7,6 +7,52 @@ console.log('Lesson 6');
 // https://www.youtube.com/watch?v=BASquaxab_w
 // https://www.youtube.com/watch?v=uLY9GXGMXaA
 
+
+// class Test {
+//     name: string;
+//     age: number;
+//
+//     constructor(name: string, age: number) {
+//         this.name = name;
+//         this.age = age;
+//     }
+//
+//     arrow = () => {
+//     }
+// }
+//
+// class Test2 extends Test {
+//     city: string
+//
+//     constructor(name: string, age: number, city: string){
+//         super(name, age);
+//         this.city = city
+//     }
+// }
+//
+// const obg2 = new Test2('Anatoli', 32, 'Gdansk')
+// console.log(obg2)
+
+
+class Test{
+    private count:number = 0;
+    getCount(){
+        return  this.count
+    }
+    incrementCount(){
+        return this.count++
+    }
+}
+let obj = new Test()
+let obj2 = new Test()
+obj.incrementCount()
+obj.incrementCount()
+obj.incrementCount()
+obj2.incrementCount()
+console.log( obj.getCount())
+console.log( obj2.getCount())
+
+
 // Task 01
 // Создайте структуру с именем student, содержащую поля: имя и фамилия, номер группы, успеваемость (массив из пяти элементов).
 // Создать массив из десяти элементов такого типа, упорядочить записи по возрастанию среднего балла.
